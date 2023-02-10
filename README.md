@@ -1,0 +1,1 @@
+# DjangoREST_Meal_Rater_API_App-Python
