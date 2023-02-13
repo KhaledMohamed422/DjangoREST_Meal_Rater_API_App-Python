@@ -34,7 +34,7 @@ class MealList(viewsets.ModelViewSet):
                     serializer.save()
                     json = {
                         'message': "Done , Update",
-                        'result' : serializer.data,
+                        'result': serializer.data,
                     }
                     return Response(json,  status=status.HTTP_200_OK)
                 else:
@@ -44,17 +44,17 @@ class MealList(viewsets.ModelViewSet):
                     return Response(json, status=status.HTTP_400_BAD_REQUEST)
             except:
                 # Create
-                serializer = RatingSerializer(data = request.data)
+                serializer = RatingSerializer(data=request.data)
                 if serializer.is_valid():
                     serializer.save()
                     json = {
                         'message': "Done , Created",
-                        'result' : serializer.data,
+                        'result': serializer.data,
                     }
                     return Response(json,  status=status.HTTP_200_OK)
                 else:
                     json = {
-                        'message': "Create,It didn't work because of an error" ,
+                        'message': "Create,It didn't work because of an error",
                     }
                     return Response(json, status=status.HTTP_400_BAD_REQUEST)
 
