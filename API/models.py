@@ -26,13 +26,13 @@ class Meal(models.Model):
 
         
     
-class Guest(models.Model):    
-    id = models.UUIDField(primary_key=True, unique=True, default=uuid.uuid4, editable=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+# class Guest(models.Model):    
+#     id = models.UUIDField(primary_key=True, unique=True, default=uuid.uuid4, editable=False)
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Rating(models.Model):
     meal = models.ForeignKey(Meal,on_delete=models.CASCADE)
-    user = models.ForeignKey(Guest,on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
     stars = models.IntegerField(validators=[MinValueValidator(1) , MaxValueValidator(5)])
     
 

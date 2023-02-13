@@ -6,11 +6,10 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register('MealList',MealList)
-router.register('GustList',GustList)
+# router.register('GustList',GustList)
 router.register('RatingList',RatingList)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('CLB/', include(router.urls)),
-       
+    path('api/', include(router.urls)),      
 ]
